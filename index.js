@@ -85,7 +85,7 @@ app.get("/", (req, res)=>{
 // Task 3: Set up the route handler for /mens which sends back category.ejs with the men's category object
 
 app.get("/mens", (req, res)=>{
-  res.sendFile(__dirname + "/public/category.ejs")
+  res.render("category.ejs", inventroy[0])
 })
 
 // Task 4: Plug in the values in category.ejs to get the page working
@@ -94,7 +94,9 @@ app.get("/mens", (req, res)=>{
 
 
 // Task 5: Set up the route handler for /item/0 which sends back the first item in product.ejs
-
+app.get("/item/0", (req, res)=>{
+  res.render("product.ejs", inventory[0].items[0])
+})
 
 
 // Task 6: Plug in the values in product.ejs to get the page working
